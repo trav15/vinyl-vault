@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {Row, Input} from 'react-materialize'
+import {Row, Col, Input, Card, CardTitle} from 'react-materialize'
 
 class VaultContainer extends Component {
   constructor(props) {
@@ -26,14 +26,22 @@ class VaultContainer extends Component {
     <div>
       <div className="listWrapper">
          <ul className="albumList">
+         <Row>
           {this.state.albums.map((album) => {
             return(
               <li className="album" album={album} key={album.id}>
-                <label className="taskLabel">{album.title}</label>
+                <Col s={12} m={6}>
+                  <Card header={<CardTitle reveal image={album.cover_url} waves='light'/>}
+                      title = {album.title}
+                      reveal={<p>Here is some more information about this product that is only revealed once clicked on.</p>}>
+                      <p>{album.artist}</p>
+                  </Card>
+                </Col>
               </li>
             )
           })}
-         </ul>
+        </Row>
+        </ul>
       </div>
     	<div className="inputContainer">
         <Row>
