@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import {Row, Input} from 'react-materialize'
 
 class VaultContainer extends Component {
   constructor(props) {
@@ -10,10 +11,10 @@ class VaultContainer extends Component {
 
   getAlbums() {
     fetch('/api/vault/albums')
-    .then(resp => resp.json())
-    .then(albums => {
-      this.setState({ albums: albums });
-    })
+      .then(resp => resp.json())
+      .then(albums => {
+        this.setState({ albums: albums });
+      })
   }
 
   componentDidMount() {
@@ -23,13 +24,23 @@ class VaultContainer extends Component {
   render() {
     return (
     <div>
+      <div className="listWrapper">
+         <ul className="albumList">
+          {this.state.albums.map((album) => {
+            return(
+              <li className="album" album={album} key={album.id}>
+                <label className="taskLabel">{album.title}</label>
+              </li>
+            )
+          })}
+         </ul>
+      </div>
     	<div className="inputContainer">
-    	  <input className="taskInput" type="text"
-    	    placeholder="Add a record to your vault" maxLength="50" />
-    	</div>
-    	<div className="listWrapper">
-    	   <ul className="albumList">
-    	   </ul>
+        <Row>
+          <Input s={6} label="Artist" className="artistInput"/>
+          <Input s={6} label="Album Title" className="titleInput"/>
+          <Input s={12} label="Cover URL" className="coverurlInput"/>
+        </Row>
     	</div>
     </div>
     )
