@@ -8,10 +8,10 @@ class App extends Component {
     return (
       <div className="container">
         <div className="header">
-          <h1>Vinyl Vault</h1>
+          <h1>Vinyl Vault<Icon medium>album</Icon></h1>
         </div>
         <VaultContainer />
-        <Button waves='light'>Add Album<Icon left>album</Icon></Button>
+        <Button waves='light'>Add Album<Icon left>library_add</Icon></Button>
       </div>
     );
   }
