@@ -9,7 +9,7 @@ class VaultContainer extends Component {
 	    placeholder="Add a record to your vault" maxLength="50" />
 	</div>
 	<div className="listWrapper">
-	   <ul className="recordList">
+	   <ul className="albumList">
 	   </ul>
 	</div>
       </div>

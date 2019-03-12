@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
   scope '/api/vault' do
-    resources :records
+    resources :albums
   end
 end

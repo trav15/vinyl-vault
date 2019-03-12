@@ -1,6 +1,6 @@
-class CreateRecords < ActiveRecord::Migration[5.2]
+class CreateAlbums < ActiveRecord::Migration[5.2]
   def change
-    create_table :records do |t|
+    create_table :albums do |t|
       t.string :title
       t.string :artist
       t.string :cover_url

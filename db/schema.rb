@@ -10,9 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_12_145027) do
+ActiveRecord::Schema.define(version: 2019_03_12_171953) do
 
-  create_table "records", force: :cascade do |t|
+  create_table "albums", force: :cascade do |t|
     t.string "title"
     t.string "artist"
     t.string "cover_url"

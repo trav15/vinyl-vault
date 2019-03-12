@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class RecordTest < ActiveSupport::TestCase
+class AlbumTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
