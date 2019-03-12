@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  scope '/api/records' do
+  scope '/api/vault' do
     resources :records
   end
 end
