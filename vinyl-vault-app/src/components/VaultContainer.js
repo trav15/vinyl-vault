@@ -15,10 +15,12 @@ class VaultContainer extends Component {
   }
 
   createAlbum = (e) => {
-    axios.post('/api/vault/albums', {album: {title: this.getTitle.value}})
+    e.preventDefault()
+    const data =  new FormData(e.target)
+    console.log(data)
+    axios.post('/api/vault/albums', {body: data})
     .then(response => {
       this.props.dispatch(addAlbum(response.data.id, response.data.title))
-      this.getTitle.value = '';
     })
     .catch(error => console.log(error))
   }
@@ -67,13 +69,15 @@ class VaultContainer extends Component {
         </Row>
         </ul>
       </div>
-    	<div className="inputContainer">
+    	<div className="inputContainer" >
+        <form onSubmit={this.createAlbum}>
         <Row>
-          <Input s={6} label="Artist" className="artistInput"/>
-          <Input s={6} label="Album Title" className="titleInput"/>
-          <Input s={12} label="Cover URL" className="coverurlInput"/>
-          <Button waves='light' onClick={this.createAlbum}>Add Album<Icon left>library_add</Icon></Button>
+          <Input s={6} label="Artist" className="artistInput" name="artist" onChange={this.onChange}/>
+          <Input s={6} label="Album Title" className="titleInput" name="title" onChange={this.onChange}/>
+          <Input s={12} label="Cover URL" className="coverurlInput" name="cover_url" onChange={this.onChange}/>
+          <Button waves='light' >Add Album<Icon left>library_add</Icon></Button>
         </Row>
+        </form>
     	</div>
     </div>
     )
