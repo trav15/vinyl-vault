@@ -14,11 +14,12 @@ class VaultContainer extends Component {
     })
     .catch(error => console.log(error))
   }
-  
+
   createAlbum = (fields) => {
     axios.post('/api/vault/albums', {album: fields})
     .then(response => {
-      this.props.dispatch(addAlbum(response.data.id, response.data.title))
+      console.log(response.data)
+      this.props.dispatch(addAlbum(response.data))
     })
     .catch(error => console.log(error))
   }

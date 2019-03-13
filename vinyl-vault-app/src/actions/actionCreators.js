@@ -4,8 +4,8 @@ export function loadAlbums(albums) {
   return { type: LOAD_ALBUMS, albums: albums }
 }
 
-export function addAlbum(id, title) {
-  return { type: ADD_ALBUM, id: id, title: title }
+export function addAlbum(data) {
+  return { type: ADD_ALBUM, id: data.id, title: data.title , artist: data.artist, cover_url: data.cover_url}
 }
 
 export function toggleAlbum(index) {

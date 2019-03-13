@@ -12,7 +12,9 @@ function albumsReducer(state = [], action)
                 {
                     id: action.id,
                     title: action.title,
-                    done: false
+                    artist: action.artist,
+                    cover_url: action.cover_url
+
                 }
             ];
 
