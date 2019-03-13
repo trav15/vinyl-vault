@@ -4,6 +4,11 @@ class AlbumsController < ApplicationController
     render json: albums
   end
 
+  def show
+    album = Album.find(params[:id])
+    render json: album
+  end
+
   def create
     album = Album.create(album_param)
     render json: album
