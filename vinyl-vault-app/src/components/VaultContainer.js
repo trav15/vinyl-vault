@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import {Row, Col, Button, Icon, Input, Card, CardTitle} from 'react-materialize'
 import axios from 'axios'
 import { connect } from 'react-redux'
-import { loadAlbums, addAlbum, toggleAlbum, deleteAlbum } from '../actions/actionCreators'
+import { loadAlbums, addAlbum, editAlbum, deleteAlbum } from '../actions/actionCreators'
 import AlbumForm from './AlbumForm'
 
 
@@ -24,10 +24,10 @@ class VaultContainer extends Component {
     .catch(error => console.log(error))
   }
 
-  updateAlbum = (e, id) => {
+  editAlbum = (e, id) => {
     axios.put(`/api/v1/albums/${id}`, {album: {done: e.target.checked}})
     .then(response => {
-      this.props.dispatch(toggleAlbum(id))
+      this.props.dispatch(editAlbum(id))
     })
     .catch(error => console.log(error))
   }
@@ -60,9 +60,7 @@ class VaultContainer extends Component {
                 <Col s={12} m={6}>
                   <Card header={<CardTitle reveal image={album.cover_url} waves='light'/>}
                       title = {album.title}
-                      reveal={ <span className="deleteAlbumBtn" onClick={(e) => this.deleteAlbum(album.id)}>
-                    x
-                  </span>}>
+                      reveal={ <button className="deleteAlbumBtn" onClick={(e) => this.deleteAlbum(album.id)}>Remove Album</button>}>
                       <p>{album.artist}</p>
                   </Card>
                 </Col>
