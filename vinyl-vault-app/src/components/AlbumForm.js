@@ -1,4 +1,5 @@
 import React from "react";
+import { Row, Col, Input, Button, Icon } from 'react-materialize'
 
 export default class AlbumForm extends React.Component {
   state = {
@@ -21,28 +22,30 @@ export default class AlbumForm extends React.Component {
   render() {
     return (
       <form>
-        <input
+      <Row>
+        <Input
+          s={6}
           name="title"
           placeholder="Title"
           value={this.state.title}
           onChange={e => this.change(e)}
         />
-        <br />
-        <input
+        <Input
+          s={6}
           name="artist"
           placeholder="Artist"
           value={this.state.artist}
           onChange={e => this.change(e)}
         />
-        <br />
-        <input
+        <Input
+          s={12}
           name="cover_url"
           placeholder="Cover URL"
           value={this.state.cover_url}
           onChange={e => this.change(e)}
         />
-        <br />
-        <button onClick={e => this.onSubmit(e)}>Submit</button>
+        <Button waves='light' onClick={e => this.onSubmit(e)}>Add Album<Icon left>library_add</Icon></Button>
+      </Row>
       </form>
     );
   }
