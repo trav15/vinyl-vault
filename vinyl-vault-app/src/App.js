@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import VaultContainer from './components/VaultContainer'
 import {Icon} from 'react-materialize'
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 class App extends Component {
   render() {
