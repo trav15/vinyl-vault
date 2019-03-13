@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import VaultContainer from './components/VaultContainer'
-import {Button, Icon} from 'react-materialize'
+import {Icon} from 'react-materialize'
 
 class App extends Component {
   render() {
@@ -11,7 +11,6 @@ class App extends Component {
           <h1>Vinyl Vault<Icon medium>album</Icon></h1>
         </div>
         <VaultContainer />
-        <Button waves='light'>Add Album<Icon left>library_add</Icon></Button>
       </div>
     );
   }
