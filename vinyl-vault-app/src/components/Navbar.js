@@ -1,15 +1,16 @@
 import React from 'react';
-import { Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import { Navbar, NavItem, Icon } from 'react-materialize';
 
-const Navbar = () => {
+const VaultNavbar = () => {
   return (
-    <div>
-      <ul>
-        <li><Link to="/">Home</Link></li>
-        <li><Link to="/new">Add Album</Link></li>
-      </ul>
+    <div className="header">
+      <Navbar brand="Vinyl Vault" left>
+        <NavItem><Link to="/">Home</Link></NavItem>
+        <NavItem><Link to="/new">Add Album</Link></NavItem>
+      </Navbar>
     </div>
   );
 }
 
-export default Navbar;
+export default VaultNavbar;
