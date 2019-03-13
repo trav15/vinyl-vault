@@ -1,10 +1,9 @@
 import React, { Component } from 'react'
-import {Row, Col, Button, Icon, Input, Card, CardTitle} from 'react-materialize'
+import {Row, Col, Card, CardTitle} from 'react-materialize'
 import axios from 'axios'
 import { connect } from 'react-redux'
 import { loadAlbums, addAlbum, editAlbum, deleteAlbum } from '../actions/actionCreators'
 import AlbumForm from './AlbumForm'
-
 
 class VaultContainer extends Component {
   getAlbums() {

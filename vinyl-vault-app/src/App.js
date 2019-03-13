@@ -1,18 +1,23 @@
 import React, { Component } from 'react';
 import './App.css';
-import VaultContainer from './components/VaultContainer'
-import {Icon} from 'react-materialize'
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import Home from './components/Home';
+import AlbumForm from './components/AlbumForm'
+
 
 class App extends Component {
   render() {
     return (
-      <div className="container">
-        <div className="header">
-          <h1>Vinyl Vault<Icon medium>album</Icon></h1>
+      <Router>
+        <div className="App">
+          <Navbar/>
+          <Switch>
+            <Route exact path='/' component={Home}/>
+            <Route exact path='/new' component={AlbumForm}/>
+          </Switch>
         </div>
-        <VaultContainer />
-      </div>
+    </Router>
     );
   }
 }
