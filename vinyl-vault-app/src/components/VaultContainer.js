@@ -3,6 +3,7 @@ import {Row, Col, Button, Icon, Input, Card, CardTitle} from 'react-materialize'
 import axios from 'axios'
 import { connect } from 'react-redux'
 import { loadAlbums, addAlbum, toggleAlbum, deleteAlbum } from '../actions/actionCreators'
+import AlbumForm from './AlbumForm'
 
 
 class VaultContainer extends Component {
@@ -13,17 +14,13 @@ class VaultContainer extends Component {
     })
     .catch(error => console.log(error))
   }
-
-  createAlbum = (e) => {
-    if (e.key === 'Enter' && !(this.getTitle.value === '')) {
-      e.preventDefault()
-      console.log(this.getTitle.state.value)
-      axios.post('/api/vault/albums', {album: {title: this.getTitle.state.value}})
-      .then(response => {
-        this.props.dispatch(addAlbum(response.data.id, response.data.title))
-      })
-      .catch(error => console.log(error))
-    }
+  
+  createAlbum = (fields) => {
+    axios.post('/api/vault/albums', {album: fields})
+    .then(response => {
+      this.props.dispatch(addAlbum(response.data.id, response.data.title))
+    })
+    .catch(error => console.log(error))
   }
 
   updateAlbum = (e, id) => {
@@ -46,8 +43,8 @@ class VaultContainer extends Component {
     this.getAlbums()
   }
 
-  onChange = (e) => {
-    this.setState({ [e.target.name]: e.target.value });
+  onSubmit = (fields) => {
+    this.createAlbum(fields)
   }
 
   render() {
@@ -74,16 +71,9 @@ class VaultContainer extends Component {
         </Row>
         </ul>
       </div>
-    	<div className="inputContainer" >
-        <form onSubmit={this.createAlbum}>
-        <Row>
-          <Input s={6} label="Artist" className="artistInput" name="artist" onChange={this.onChange}/>
-          <Input s={6} label="Album Title" className="titleInput" name="title" onKeyPress={this.createAlbum} ref={(input)=>this.getTitle = input} />
-          <Input s={12} label="Cover URL" className="coverurlInput" name="cover_url" onChange={this.onChange}/>
-          <Button waves='light' >Add Album<Icon left>library_add</Icon></Button>
-        </Row>
-        </form>
-    	</div>
+      <div>
+        <AlbumForm onSubmit={fields => this.onSubmit(fields)}/>
+      </div>
     </div>
     )
     }
