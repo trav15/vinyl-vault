@@ -5,11 +5,11 @@ import {Col, Button, Icon, Input, Card, CardTitle} from 'react-materialize'
 class ShowAlbum extends Component {
   render() {
 
-    const album = this.props;
-    console.log(album)
-    
+    const album = this.props.currentalbum;
+    console.log(this)
+
     return (
-      <li className="album" album={album} key={album.id}>
+      <li className="album">
         <Col s={12} m={6}>
           <Card header={<CardTitle reveal image={album.cover_url} waves='light'/>}
               title = {album.title}
