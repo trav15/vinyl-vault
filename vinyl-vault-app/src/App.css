@@ -52,6 +52,10 @@
 }
 
 .card .card-title {
-    font-size: 20px;
-    font-weight: 400;
+  font-size: 20px !important;
+  font-weight: 400 !important;
+}
+
+nav .brand-logo.right {
+  right: 2rem !important;
 }
