@@ -9,7 +9,7 @@ class ShowAlbum extends Component {
 
     return (
       <li className="album">
-        <Col s={12} m={6}>
+        <Col s={12} m={3}>
           <Card header={<CardTitle reveal image={album.cover_url} waves='light'/>}
               title = {album.title}
               reveal={ <button className="deleteAlbumBtn" onClick={(e) => this.deleteAlbum(album.id)}>Remove Album</button>}>
