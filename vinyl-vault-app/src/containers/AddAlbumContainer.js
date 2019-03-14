@@ -6,16 +6,12 @@ import AlbumForm from '../components/AlbumForm'
 import ShowAlbum from '../components/ShowAlbum'
 
 class addAlbumContainer extends Component {
-  state = {
-    message: ""
-  }
-
   addAlbum = (fields) => {
     axios.post('/api/vault/albums', {album: fields})
     .then(response => {
       this.props.dispatch(addAlbum(response.data))
     if (response.status === 200 && response.statusText === 'OK'){
-        this.setState({message: 'Successfully Added Album To Collection'})
+        window.Materialize.toast('Successfully Added Album To Collection', 3000)
     }
     })
     .catch(error => console.log(error))
@@ -29,7 +25,6 @@ class addAlbumContainer extends Component {
 
     return (
       <div className="album-form">
-        <div className="result">{ this.state.message }</div>
         <AlbumForm onSubmit={fields => this.onSubmit(fields)}/>
       </div>
     )
