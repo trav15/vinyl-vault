@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
-import {Col, Button, Icon, Input, Card, CardTitle} from 'react-materialize'
+import { Col, Card, CardTitle } from 'react-materialize'
 
 class ShowAlbum extends Component {
   render() {

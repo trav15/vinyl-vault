@@ -1,5 +1,5 @@
 import React from "react";
-import { Row, Col, Input, Button, Icon } from 'react-materialize'
+import { Row, Input, Button, Icon } from 'react-materialize'
 
 export default class AlbumForm extends React.Component {
   state = {

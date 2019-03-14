@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {Row, Col, Card, CardTitle} from 'react-materialize'
+import { Row } from 'react-materialize'
 import axios from 'axios'
 import { connect } from 'react-redux'
 import { loadAlbums, addAlbum, editAlbum, deleteAlbum } from '../actions/actionCreators'

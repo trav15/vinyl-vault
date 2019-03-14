@@ -1,6 +1,5 @@
 import React from 'react';
 import '../App.css'
-import {Icon} from 'react-materialize'
 import VaultContainer from './VaultContainer'
 
 const Home = () => {

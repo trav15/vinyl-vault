@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Navbar, NavItem, Icon } from 'react-materialize';
+import { Navbar, NavItem } from 'react-materialize';
 
 const VaultNavbar = () => {
   return (
