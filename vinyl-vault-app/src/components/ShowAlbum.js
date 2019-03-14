@@ -6,7 +6,6 @@ class ShowAlbum extends Component {
   render() {
 
     const album = this.props.currentalbum;
-    console.log(this)
 
     return (
       <li className="album">
