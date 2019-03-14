@@ -4,6 +4,7 @@ import axios from 'axios'
 import { connect } from 'react-redux'
 import { loadAlbums, addAlbum, editAlbum, deleteAlbum } from '../actions/actionCreators'
 import AlbumForm from './AlbumForm'
+import ShowAlbum from './ShowAlbum'
 
 class VaultContainer extends Component {
   getAlbums() {
@@ -48,24 +49,19 @@ class VaultContainer extends Component {
   }
 
   render() {
+    const albums = this.props.albums;
+    const sortedAlbums = albums.sort((a,b) => b.artist < a.artist ? 1 : -1)
+    console.log(albums)
+    console.log("unsorted ^")
+    console.log(sortedAlbums)
+    console.log("sorted ^")
+
     return (
     <div>
       <div className="listWrapper">
          <ul className="albumList">
          <Row>
-          {this.props.albums.map((album) => {
-            return(
-              <li className="album" album={album} key={album.id}>
-                <Col s={12} m={6}>
-                  <Card header={<CardTitle reveal image={album.cover_url} waves='light'/>}
-                      title = {album.title}
-                      reveal={ <button className="deleteAlbumBtn" onClick={(e) => this.deleteAlbum(album.id)}>Remove Album</button>}>
-                      <p>{album.artist}</p>
-                  </Card>
-                </Col>
-              </li>
-            )
-          })}
+          {sortedAlbums.map((album) => <ShowAlbum key={album.id} album={album} />)}
         </Row>
         </ul>
       </div>

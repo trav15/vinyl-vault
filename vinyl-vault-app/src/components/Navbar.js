@@ -6,8 +6,9 @@ const VaultNavbar = () => {
   return (
     <div className="header">
       <Navbar brand="Vinyl Vault" left>
-        <NavItem><Link to="/">Home</Link></NavItem>
-        <NavItem><Link to="/new">Add Album</Link></NavItem>
+        <Link to="/"><NavItem>Home</NavItem></Link>
+        <Link to="/new"><NavItem>Add Album</NavItem></Link>
+        <Link to="/album"><NavItem>Show Album</NavItem></Link>
       </Navbar>
     </div>
   );
