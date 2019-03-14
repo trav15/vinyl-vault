@@ -1,12 +1,12 @@
 import React from 'react';
 import '../App.css'
-import VaultContainer from './VaultContainer'
 
 const Home = () => {
   return (
     <div className="home">
       <div className="container">
-        <VaultContainer />
+        <h3>Welcome to your Vinyl Vault</h3>
+        <p>Your home for cataloging your vinyl record collection</p>
       </div>
     </div>
   );

@@ -7,8 +7,8 @@ const VaultNavbar = () => {
     <div className="header">
       <Navbar brand="Vinyl Vault" left>
         <Link to="/"><NavItem>Home</NavItem></Link>
+        <Link to="/albums"><NavItem>Collection</NavItem></Link>
         <Link to="/new"><NavItem>Add Album</NavItem></Link>
-        <Link to="/album"><NavItem>Show Album</NavItem></Link>
       </Navbar>
     </div>
   );

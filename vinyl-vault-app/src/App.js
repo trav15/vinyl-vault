@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import VaultNavbar from './components/Navbar';
 import Home from './components/Home';
 import AlbumForm from './components/AlbumForm'
-import ShowAlbum from './components/ShowAlbum'
+import VaultContainer from './containers/VaultContainer'
 
 
 class App extends Component {
@@ -16,7 +16,7 @@ class App extends Component {
           <Switch>
             <Route exact path='/' component={Home}/>
             <Route exact path='/new' component={AlbumForm}/>
-            <Route exact path='/album' component={ShowAlbum}/>
+            <Route exact path='/albums' component={VaultContainer}/>
           </Switch>
         </div>
     </Router>
