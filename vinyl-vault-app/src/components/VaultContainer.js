@@ -51,10 +51,6 @@ class VaultContainer extends Component {
   render() {
     const albums = this.props.albums;
     const sortedAlbums = albums.sort((a,b) => b.artist < a.artist ? 1 : -1)
-    console.log(albums)
-    console.log("unsorted ^")
-    console.log(sortedAlbums)
-    console.log("sorted ^")
 
     return (
     <div>
