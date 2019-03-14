@@ -2,9 +2,9 @@ import React, { Component } from 'react'
 import { Row } from 'react-materialize'
 import axios from 'axios'
 import { connect } from 'react-redux'
-import { loadAlbums, addAlbum, editAlbum, deleteAlbum } from '../actions/actionCreators'
-import AlbumForm from '../components/AlbumForm'
+import { loadAlbums, editAlbum, deleteAlbum } from '../actions/actionCreators'
 import ShowAlbum from '../components/ShowAlbum'
+import AddAlbumContainer from './AddAlbumContainer'
 
 class VaultContainer extends Component {
   getAlbums() {
@@ -15,17 +15,8 @@ class VaultContainer extends Component {
     .catch(error => console.log(error))
   }
 
-  createAlbum = (fields) => {
-    axios.post('/api/vault/albums', {album: fields})
-    .then(response => {
-      console.log(response.data)
-      this.props.dispatch(addAlbum(response.data))
-    })
-    .catch(error => console.log(error))
-  }
-
   editAlbum = (e, id) => {
-    axios.put(`/api/v1/albums/${id}`, {album: {done: e.target.checked}})
+    axios.put(`/api/vault/albums/${id}`, {album: {done: e.target.checked}})
     .then(response => {
       this.props.dispatch(editAlbum(id))
     })
@@ -44,10 +35,6 @@ class VaultContainer extends Component {
     this.getAlbums()
   }
 
-  onSubmit = (fields) => {
-    this.createAlbum(fields)
-  }
-
   render() {
     const albums = this.props.albums;
     const sortedAlbums = albums.sort((a,b) => b.artist < a.artist ? 1 : -1)
@@ -62,7 +49,7 @@ class VaultContainer extends Component {
         </ul>
       </div>
       <div>
-        <AlbumForm onSubmit={fields => this.onSubmit(fields)}/>
+        <AddAlbumContainer />
       </div>
     </div>
     )
