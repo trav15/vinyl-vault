@@ -16,7 +16,8 @@ export default class AlbumForm extends React.Component {
 
   onSubmit = e => {
     e.preventDefault();
-    this.props.onSubmit(this.state)
+    this.props.onSubmit(this.state);
+    this.setState({title: "", artist: "", cover_url: ""});
   };
 
   render() {
