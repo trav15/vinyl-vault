@@ -23,7 +23,7 @@ export default class AlbumForm extends React.Component {
   render() {
     return (
       <form>
-      <Row>
+      <Row className="add-album-form">
         <Input
           s={6}
           name="title"

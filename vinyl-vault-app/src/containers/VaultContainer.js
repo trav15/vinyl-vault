@@ -49,7 +49,9 @@ class VaultContainer extends Component {
         </ul>
       </div>
       <div>
-        <AddAlbumContainer />
+        <Row>
+          <AddAlbumContainer />
+        </Row>
       </div>
     </div>
     )

@@ -59,3 +59,7 @@
 nav .brand-logo.right {
   right: 2rem !important;
 }
+
+.add-album-form {
+  padding: 5% 10% 0 10%;
+}
