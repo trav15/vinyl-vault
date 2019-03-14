@@ -14,9 +14,10 @@ class App extends Component {
         <div className="App">
           <VaultNavbar/>
           <Switch>
-            <Route exact path='/' component={Home}/>
-            <Route exact path='/new' component={AlbumForm}/>
-            <Route exact path='/albums' component={VaultContainer}/>
+            <Route exact={true} path='/' component={Home}/>
+            <Route exact={true} path='/albums/new' component={AlbumForm}/>
+            <Route exact={true} path='/albums' component={VaultContainer}/>
+            <Route path="/*" component={Home}/>
           </Switch>
         </div>
     </Router>
