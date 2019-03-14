@@ -41,3 +41,17 @@
   margin-left: auto !important;
   margin-right: auto !important;
 }
+
+.card-content {
+  text-align: left !important;
+  padding: 12px !important;
+}
+
+.card .card-content .card-title {
+  line-height: 25px !important;
+}
+
+.card .card-title {
+    font-size: 20px;
+    font-weight: 400;
+}
