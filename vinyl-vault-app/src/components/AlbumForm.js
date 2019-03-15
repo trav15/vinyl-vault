@@ -5,7 +5,10 @@ export default class AlbumForm extends React.Component {
   state = {
     title: "",
     artist: "",
-    cover_url: ""
+    cover_url: "",
+    titleValid: "",
+    artistValid: "",
+    cover_urlValid: ""
   };
 
   change = e => {
@@ -16,17 +19,31 @@ export default class AlbumForm extends React.Component {
 
   onSubmit = e => {
     e.preventDefault();
-    this.props.onSubmit(this.state);
-    this.setState({title: "", artist: "", cover_url: ""});
+    if (this.state.artist !== "" && this.state.title !== "") {
+      this.props.onSubmit(this.state);
+      this.setState({title: "", artist: "", cover_url: ""});
+    } else if (this.state.artist == "" && this.state.title == "") {
+      this.setState({titleValid: "invalid", artistValid: "invalid"});
+      window.Materialize.toast('Title and Artist fields must be completed', 4000);
+    } else if (this.state.artist == "") {
+      this.setState({artistValid: "invalid"});
+      window.Materialize.toast('Artist field must be completed', 4000);
+    } else if (this.state.title == "") {
+      this.setState({titleValid: "invalid"});
+      window.Materialize.toast('Title field must be completed', 4000);
+    }
   };
 
   render() {
     return (
       <form>
+      <div className="panel panel-default">
+      </div>
       <Row className="add-album-form">
         <Input
           s={6}
           name="title"
+          className={"validate " + this.state.titleValid}
           placeholder="Title"
           value={this.state.title}
           onChange={e => this.change(e)}
@@ -34,6 +51,7 @@ export default class AlbumForm extends React.Component {
         <Input
           s={6}
           name="artist"
+          className={"validate " + this.state.artistValid}
           placeholder="Artist"
           value={this.state.artist}
           onChange={e => this.change(e)}
