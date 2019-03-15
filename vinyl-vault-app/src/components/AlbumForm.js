@@ -6,6 +6,7 @@ export default class AlbumForm extends React.Component {
     title: "",
     artist: "",
     cover_url: "",
+    notes: "",
     titleValid: "",
     artistValid: "",
     cover_urlValid: ""
@@ -21,7 +22,7 @@ export default class AlbumForm extends React.Component {
     e.preventDefault();
     if (this.state.artist !== "" && this.state.title !== "") {
       this.props.onSubmit(this.state);
-      this.setState({title: "", artist: "", cover_url: ""});
+      this.setState({title: "", artist: "", cover_url: "", notes: ""});
     } else if (this.state.artist == "" && this.state.title == "") {
       this.setState({titleValid: "invalid", artistValid: "invalid"});
       window.Materialize.toast('Title and Artist fields must be completed', 4000);
@@ -61,6 +62,13 @@ export default class AlbumForm extends React.Component {
           name="cover_url"
           placeholder="Cover URL (Optional)"
           value={this.state.cover_url}
+          onChange={e => this.change(e)}
+        />
+        <Input
+          s={12}
+          name="notes"
+          placeholder="Notes (Optional)"
+          value={this.state.notes}
           onChange={e => this.change(e)}
         />
         <Button waves='light' onClick={e => this.onSubmit(e)}>Add Album<Icon left>library_add</Icon></Button>
