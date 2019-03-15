@@ -44,7 +44,7 @@ export default class AlbumForm extends React.Component {
           s={6}
           name="title"
           className={"validate " + this.state.titleValid}
-          placeholder="Title"
+          placeholder="Album Title"
           value={this.state.title}
           onChange={e => this.change(e)}
         />
@@ -59,7 +59,7 @@ export default class AlbumForm extends React.Component {
         <Input
           s={12}
           name="cover_url"
-          placeholder="Cover URL"
+          placeholder="Cover URL (Optional)"
           value={this.state.cover_url}
           onChange={e => this.change(e)}
         />
