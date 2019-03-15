@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
-import { Col, Card, CardTitle } from 'react-materialize'
+import { Col, Card, CardTitle , Button } from 'react-materialize'
 
 class ShowAlbum extends Component {
   render() {
@@ -12,7 +12,7 @@ class ShowAlbum extends Component {
         <Col s={12} m={3}>
           <Card header={<CardTitle reveal image={album.cover_url} waves='light'/>}
               title = {album.title}
-              reveal={ <button className="deleteAlbumBtn" onClick={(e) => this.deleteAlbum(album.id)}>Remove Album</button>}>
+              reveal={ <Button className="deleteAlbumBtn" onClick={(e) => this.deleteAlbum(album.id)}>Remove Album</Button>}>
               <p>{album.artist}</p>
           </Card>
         </Col>

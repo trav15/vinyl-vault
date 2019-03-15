@@ -63,3 +63,8 @@ nav .brand-logo.right {
 .add-album-form {
   padding: 5% 10% 0 10%;
 }
+
+.deleteAlbumBtn {
+  background-color: #ea4040 !important;
+  margin: 10% !important;
+}
