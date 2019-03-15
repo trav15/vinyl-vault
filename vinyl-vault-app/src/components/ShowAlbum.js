@@ -14,7 +14,7 @@ class ShowAlbum extends Component {
         <Col s={12} m={3}>
           <Card header={<CardTitle reveal image={album.cover_url} waves='light'/>}
               title = {album.title}
-              reveal={ <div><p>{album.notes}</p><Button waves='light' className="deleteAlbumBtn" onClick={(e) => this.deleteAlbum(album.id)}>Remove Album</Button></div>}>
+              reveal={ <div><p>{album.notes}</p><Button waves='light' className="deleteAlbumBtn" onClick={(e) => this.props.deleteAlbum(album.id)}>Remove Album</Button></div>}>
               <p>{album.artist}</p>
           </Card>
         </Col>

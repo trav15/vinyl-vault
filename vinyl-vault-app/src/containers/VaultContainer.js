@@ -44,7 +44,7 @@ class VaultContainer extends Component {
       <div className="listWrapper">
          <ul className="albumList">
          <Row>
-          {sortedAlbums.map((album) => <ShowAlbum key={album.id} currentalbum={album} />)}
+          {sortedAlbums.map((album) => <ShowAlbum key={album.id} currentalbum={album} deleteAlbum={album => this.deleteAlbum(album)} />)}
         </Row>
         </ul>
       </div>
