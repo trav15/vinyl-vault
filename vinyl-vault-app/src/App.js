@@ -5,7 +5,7 @@ import VaultNavbar from './components/Navbar';
 import Home from './components/Home';
 import AddAlbumContainer from './containers/AddAlbumContainer'
 import VaultContainer from './containers/VaultContainer'
-import ShowAlbumContainer from './components/ShowAlbumContainer'
+import ShowAlbumContainer from './containers/ShowAlbumContainer'
 
 
 class App extends Component {
