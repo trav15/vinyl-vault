@@ -3,7 +3,7 @@ import { Row } from 'react-materialize'
 import axios from 'axios'
 import { connect } from 'react-redux'
 import { loadAlbums, editAlbum, deleteAlbum } from '../actions/actionCreators'
-import ShowAlbum from '../components/ShowAlbum'
+import AlbumCard from '../components/AlbumCard'
 import AddAlbumContainer from './AddAlbumContainer'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
@@ -47,7 +47,7 @@ class VaultContainer extends Component {
       <div className="listWrapper">
          <ul className="albumList">
          <Row>
-          {sortedAlbums.map((album) => <ShowAlbum key={album.id} currentalbum={album} deleteAlbum={album => this.deleteAlbum(album)} />)}
+          {sortedAlbums.map((album) => <AlbumCard key={album.id} currentalbum={album} deleteAlbum={album => this.deleteAlbum(album)} />)}
         </Row>
         </ul>
       </div>

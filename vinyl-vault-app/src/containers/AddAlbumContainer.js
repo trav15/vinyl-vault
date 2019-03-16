@@ -3,7 +3,7 @@ import axios from 'axios'
 import { connect } from 'react-redux'
 import { addAlbum } from '../actions/actionCreators'
 import AlbumForm from '../components/AlbumForm'
-import ShowAlbum from '../components/ShowAlbum'
+import AlbumCard from '../components/AlbumCard'
 
 class addAlbumContainer extends Component {
   addAlbum = (fields) => {

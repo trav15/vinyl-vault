@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import { Col, Card, CardTitle , Button } from 'react-materialize'
 
-class ShowAlbum extends Component {
+class AlbumCard extends Component {
   render() {
 
     const album = this.props.currentalbum;
@@ -29,4 +29,4 @@ const mapStateToProps = state => {
 	}
 }
 
-export default connect(mapStateToProps)(ShowAlbum);
+export default connect(mapStateToProps)(AlbumCard);

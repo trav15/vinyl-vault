@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import axios from 'axios'
 import { loadAlbum } from '../actions/actionCreators'
 import { Col, Card, CardTitle , Button } from 'react-materialize'
-import ShowAlbum from './ShowAlbum'
+import AlbumCard from './AlbumCard'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 class AlbumShow extends Component {
