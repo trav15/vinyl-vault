@@ -6,7 +6,7 @@ import { Col, Card, CardTitle , Button } from 'react-materialize'
 import AlbumCard from './AlbumCard'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
-class AlbumShow extends Component {
+class ShowAlbumContainer extends Component {
 
   getAlbum(albumId) {
     axios.get(`/api/vault/albums/${albumId}`)
@@ -47,4 +47,4 @@ const mapStateToProps = state => {
 	}
 }
 
-export default connect(mapStateToProps)(AlbumShow);
+export default connect(mapStateToProps)(ShowAlbumContainer);
