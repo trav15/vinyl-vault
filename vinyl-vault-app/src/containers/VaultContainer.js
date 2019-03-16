@@ -5,6 +5,7 @@ import { connect } from 'react-redux'
 import { loadAlbums, editAlbum, deleteAlbum } from '../actions/actionCreators'
 import ShowAlbum from '../components/ShowAlbum'
 import AddAlbumContainer from './AddAlbumContainer'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 class VaultContainer extends Component {
   getAlbums() {
@@ -34,6 +35,8 @@ class VaultContainer extends Component {
   componentDidMount() {
     this.getAlbums()
   }
+
+
 
   render() {
     const albums = this.props.albums;
