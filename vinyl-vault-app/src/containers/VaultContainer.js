@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Row } from 'react-materialize'
 import axios from 'axios'
 import { connect } from 'react-redux'
-import { loadAlbums, editAlbum, deleteAlbum } from '../actions/actionCreators'
+import { loadAlbums, deleteAlbum } from '../actions/actionCreators'
 import AlbumCard from '../components/AlbumCard'
 import AddAlbumContainer from './AddAlbumContainer'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
@@ -12,14 +12,6 @@ class VaultContainer extends Component {
     axios.get('/api/vault/albums')
     .then(response => {
       this.props.dispatch(loadAlbums(response.data));
-    })
-    .catch(error => console.log(error))
-  }
-
-  editAlbum = (e, id) => {
-    axios.put(`/api/vault/albums/${id}`, {album: {done: e.target.checked}})
-    .then(response => {
-      this.props.dispatch(editAlbum(id))
     })
     .catch(error => console.log(error))
   }

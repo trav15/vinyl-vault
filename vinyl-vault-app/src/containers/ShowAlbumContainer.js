@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import axios from 'axios'
-import { loadAlbum } from '../actions/actionCreators'
+import { loadAlbum, editAlbum } from '../actions/actionCreators'
 import { Col, Card, CardTitle , Button } from 'react-materialize'
-import AlbumCard from '../components/AlbumCard'
+import AlbumInfo from '../components/AlbumInfo'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 class ShowAlbumContainer extends Component {
@@ -12,6 +12,14 @@ class ShowAlbumContainer extends Component {
     axios.get(`/api/vault/albums/${albumId}`)
     .then(response => {
       this.props.dispatch(loadAlbum(response.data));
+    })
+    .catch(error => console.log(error))
+  }
+
+  editAlbum = (e, id) => {
+    axios.put(`/api/vault/albums/${id}`, {album: {done: e.target.checked}})
+    .then(response => {
+      this.props.dispatch(editAlbum(id))
     })
     .catch(error => console.log(error))
   }
@@ -27,7 +35,7 @@ class ShowAlbumContainer extends Component {
 
     return (
       <ul>
-        <AlbumCard key={album.id} currentalbum={album} deleteAlbum={album => this.deleteAlbum(album)} />
+        <AlbumInfo key={album.id} currentalbum={album} deleteAlbum={album => this.deleteAlbum(album)} />
       </ul>
     )
   }
