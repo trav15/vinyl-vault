@@ -1,10 +1,13 @@
-import { LOAD_ALBUMS, ADD_ALBUM, EDIT_ALBUM, DELETE_ALBUM } from '../actions/actionTypes'
+import { LOAD_ALBUMS, LOAD_ALBUM, ADD_ALBUM, EDIT_ALBUM, DELETE_ALBUM } from '../actions/actionTypes'
 
 function albumsReducer(state = [], action)
 {
     switch(action.type) {
         case LOAD_ALBUMS:
             return action.albums;
+
+        case LOAD_ALBUM:
+            return action.album;
 
         case ADD_ALBUM:
             return [

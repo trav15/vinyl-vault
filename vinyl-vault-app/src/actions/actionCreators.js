@@ -1,7 +1,11 @@
-import { LOAD_ALBUMS, ADD_ALBUM, EDIT_ALBUM, DELETE_ALBUM } from '../actions/actionTypes'
+import { LOAD_ALBUMS, LOAD_ALBUM, ADD_ALBUM, EDIT_ALBUM, DELETE_ALBUM } from '../actions/actionTypes'
 
 export function loadAlbums(albums) {
   return { type: LOAD_ALBUMS, albums: albums }
+}
+
+export function loadAlbum(album) {
+  return { type: LOAD_ALBUM, album: album }
 }
 
 export function addAlbum(data) {
