@@ -21,22 +21,14 @@ class ShowAlbumContainer extends Component {
 	}
 
   render() {
-    // console.log(this.props.match.params.albumId)
     const album = this.props.album
-    console.log(album)
-    // const genericCoverURL = "http://canaanmedia.com/wp-content/uploads/2014/09/12.jpg"
-    // album.cover_url = album.cover_url == "" ?  genericCoverURL : album.cover_url
+    const genericCoverURL = "http://canaanmedia.com/wp-content/uploads/2014/09/12.jpg"
+    album.cover_url = album.cover_url == "" ?  genericCoverURL : album.cover_url
 
     return (
-      <div className="album">
-        <Col s={12} m={3}>
-          <Card header={<CardTitle reveal image={album.cover_url} waves='light'/>}
-              title = {album.title}
-              reveal={ <div><p>{album.notes}</p><Button waves='light' className="deleteAlbumBtn" onClick={(e) => this.props.deleteAlbum(album.id)}>Remove Album</Button></div>}>
-              <p>{album.artist}</p>
-          </Card>
-        </Col>
-      </div>
+      <ul>
+        <AlbumCard key={album.id} currentalbum={album} deleteAlbum={album => this.deleteAlbum(album)} />
+      </ul>
     )
   }
 }
