@@ -15,15 +15,14 @@ class AlbumInfo extends Component {
     return (
       <li className="album">
         <Col>
-          <Card header={<CardTitle image={album.cover_url} waves='light'/>}
-              title = {album.title}>
-              <h3>{album.artist}</h3>
-              <p>{album.notes}</p>
+          <img src={album.cover_url} alt="album cover" />
+          <h3>{album.title}</h3>
+          <h4>{album.artist}</h4>
+          <p>{album.notes}</p>
               <AlbumForm />
               <div>
                 <Button waves='light' className="deleteAlbumBtn" onClick={(e) => this.props.deleteAlbum(album.id)}>Remove Album</Button>
               </div>
-          </Card>
         </Col>
       </li>
     )
