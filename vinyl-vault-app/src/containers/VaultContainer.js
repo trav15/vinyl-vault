@@ -28,8 +28,6 @@ class VaultContainer extends Component {
     this.getAlbums()
   }
 
-
-
   render() {
     const albums = this.props.albums;
     const sortedAlbums = albums.sort((a,b) => b.artist < a.artist ? 1 : -1)
