@@ -38,7 +38,7 @@ class VaultContainer extends Component {
         <Row>
           <Profile albums={albums} />
         </Row>
-      </div>`
+      </div>
       <div className="listWrapper">
          <ul className="albumList">
          <Row>
