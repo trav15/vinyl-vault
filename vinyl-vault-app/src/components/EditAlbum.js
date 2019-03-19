@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { Col, Card, CardTitle , Button } from 'react-materialize'
 import AlbumForm from './AlbumForm'
 
-class AlbumInfo extends Component {
+class EditAlbum extends Component {
   render() {
 
     const album = this.props.currentalbum;
@@ -19,7 +19,7 @@ class AlbumInfo extends Component {
           <h3>{album.title}</h3>
           <h4>{album.artist}</h4>
           <p>{album.notes}</p>
-              <AlbumForm />
+              <AlbumForm album={album} />
               <div>
                 <Button waves='light' className="deleteAlbumBtn" onClick={(e) => this.props.deleteAlbum(album.id)}>Remove Album</Button>
               </div>
@@ -35,4 +35,4 @@ const mapStateToProps = state => {
 	}
 }
 
-export default connect(mapStateToProps)(AlbumInfo);
+export default connect(mapStateToProps)(EditAlbum);

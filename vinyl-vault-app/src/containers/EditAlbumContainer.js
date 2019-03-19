@@ -3,10 +3,10 @@ import { connect } from 'react-redux';
 import axios from 'axios'
 import { loadAlbum, editAlbum } from '../actions/actionCreators'
 import { Col, Card, CardTitle , Button } from 'react-materialize'
-import AlbumInfo from '../components/AlbumInfo'
+import EditAlbum from '../components/EditAlbum'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
-class ShowAlbumContainer extends Component {
+class EditAlbumContainer extends Component {
 
   getAlbum(albumId) {
     axios.get(`/api/vault/albums/${albumId}`)
@@ -35,7 +35,7 @@ class ShowAlbumContainer extends Component {
 
     return (
       <ul>
-        <AlbumInfo key={album.id} currentalbum={album} deleteAlbum={album => this.deleteAlbum(album)} />
+        <EditAlbum key={album.id} currentalbum={album} deleteAlbum={album => this.deleteAlbum(album)} />
       </ul>
     )
   }
@@ -47,4 +47,4 @@ const mapStateToProps = state => {
 	}
 }
 
-export default connect(mapStateToProps)(ShowAlbumContainer);
+export default connect(mapStateToProps)(EditAlbumContainer);
