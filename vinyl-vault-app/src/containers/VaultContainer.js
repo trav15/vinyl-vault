@@ -34,7 +34,7 @@ class VaultContainer extends Component {
 
     return (
     <div>
-  `   <div>
+      <div>
         <Row>
           <Profile albums={albums} />
         </Row>
