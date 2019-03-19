@@ -5,7 +5,7 @@ const Profile = (albums) => {
   return (
     <div className="profile">
       <div className="container">
-        <h3>Welcome to your Vinyl Vault</h3>
+        <h4>Your Vinyl Vault collection</h4>
         <p>You currently have {albums.albums.length} albums in your collection.</p>
       </div>
     </div>
