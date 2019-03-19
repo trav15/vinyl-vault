@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
-import { Col, Card, CardTitle , Button } from 'react-materialize'
+import { Col, Card, CardTitle } from 'react-materialize'
 import AlbumCardReveal from './AlbumCardReveal'
 
 class AlbumCard extends Component {
@@ -9,7 +8,7 @@ class AlbumCard extends Component {
 
     const album = this.props.currentalbum;
     const genericCoverURL = "http://canaanmedia.com/wp-content/uploads/2014/09/12.jpg"
-    album.cover_url = album.cover_url == "" ?  genericCoverURL : album.cover_url
+    album.cover_url = album.cover_url === "" ?  genericCoverURL : album.cover_url
     const albumURL = `/albums/${album.id}`
 
     return (
