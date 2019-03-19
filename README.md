@@ -5,7 +5,7 @@ A CMS to track a user's vinyl record collection. Users can add a vinyl record wi
 
 Built as Final Project for Flatiron School Full Stack Web Developer Online program
 
-###Running on:
+### Running on:
 * Ruby 2.3.3
 
 * Rails 5.2.2
