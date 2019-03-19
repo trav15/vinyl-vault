@@ -1,4 +1,4 @@
-import { LOAD_ALBUMS, LOAD_ALBUM, ADD_ALBUM, EDIT_ALBUM, DELETE_ALBUM } from '../actions/actionTypes'
+import { LOAD_ALBUMS, LOAD_ALBUM, ADD_ALBUM, DELETE_ALBUM } from '../actions/actionTypes'
 
 function albumsReducer(state = [], action)
 {
@@ -21,12 +21,6 @@ function albumsReducer(state = [], action)
 
                 }
             ];
-
-        case EDIT_ALBUM:
-            return state.map(album => (album.id === action.index)
-                  ? {...album, done: !album.done}
-                  : album
-            );
 
         case DELETE_ALBUM:
             return state.filter(album => album.id !== action.index);

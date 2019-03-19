@@ -1,4 +1,4 @@
-import { LOAD_ALBUMS, LOAD_ALBUM, ADD_ALBUM, EDIT_ALBUM, DELETE_ALBUM } from '../actions/actionTypes'
+import { LOAD_ALBUMS, LOAD_ALBUM, ADD_ALBUM, DELETE_ALBUM } from '../actions/actionTypes'
 
 export function loadAlbums(albums) {
   return { type: LOAD_ALBUMS, albums: albums }
