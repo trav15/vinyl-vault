@@ -23,13 +23,13 @@ export default class AlbumForm extends React.Component {
     if (this.state.artist !== "" && this.state.title !== "") {
       this.props.onSubmit(this.state);
       this.setState({title: "", artist: "", cover_url: "", notes: ""});
-    } else if (this.state.artist == "" && this.state.title == "") {
+    } else if (this.state.artist === "" && this.state.title === "") {
       this.setState({titleValid: "invalid", artistValid: "invalid"});
       window.Materialize.toast('Title and Artist fields must be completed', 4000);
-    } else if (this.state.artist == "") {
+    } else if (this.state.artist === "") {
       this.setState({artistValid: "invalid"});
       window.Materialize.toast('Artist field must be completed', 4000);
-    } else if (this.state.title == "") {
+    } else if (this.state.title === "") {
       this.setState({titleValid: "invalid"});
       window.Materialize.toast('Title field must be completed', 4000);
     }
