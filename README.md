@@ -1,24 +1,16 @@
-# README
+# Vinyl Vault
+![Vinyl Vault screenshot](https://raw.githubusercontent.com/trav15/trav15.github.io/master/img/vinyl-vault.png)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A CMS to track a user's vinyl record collection. Utilizes React/Redux as front-end framework and Rails API as a back-end server.
 
-Things you may want to cover:
+Final Project for Flatiron School Full Stack Web Developer Online program
 
-* Ruby version
+Running on:
 
-* System dependencies
+* Ruby 2.3.3
 
-* Configuration
+* Rails 5.2.2
 
-* Database creation
+* React 16.8
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Redux 4.0
