@@ -12,10 +12,6 @@ export function addAlbum(data) {
   return { type: ADD_ALBUM, id: data.id, title: data.title , artist: data.artist, cover_url: data.cover_url, notes: data.notes}
 }
 
-export function editAlbum(index) {
-  return { type: EDIT_ALBUM, index: index }
-}
-
 export function deleteAlbum(index) {
   return { type: DELETE_ALBUM, index: index }
 }

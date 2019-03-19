@@ -46,7 +46,7 @@ export default class AlbumForm extends React.Component {
           name="title"
           className={"validate " + this.state.titleValid}
           placeholder="Album Title"
-          value={this.state.title}
+          value={this.state.title || this.props.title}
           onChange={e => this.change(e)}
         />
         <Input
