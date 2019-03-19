@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { Col, Card, CardTitle , Button } from 'react-materialize'
+import AlbumCardReveal from './AlbumCardReveal'
 
 class AlbumCard extends Component {
   render() {
@@ -16,9 +17,7 @@ class AlbumCard extends Component {
         <Col s={12} m={3}>
           <Card header={<CardTitle reveal image={album.cover_url} waves='light'/>}
               title = {album.title}
-              reveal={ <div><p>{album.notes}</p>
-              <Link to={albumURL}><Button waves='light' className="editAlbumBtn">Edit Album</Button></Link>
-              <Button waves='light' className="deleteAlbumBtn" onClick={(e) => this.props.deleteAlbum(album.id)}>Remove Album</Button></div>}>
+              reveal={ <AlbumCardReveal album={album} albumURL = {albumURL} /> }>
               <p>{album.artist}</p>
           </Card>
         </Col>
