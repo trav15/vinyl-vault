@@ -5,6 +5,7 @@ import { connect } from 'react-redux'
 import { loadAlbums, deleteAlbum } from '../actions/actionCreators'
 import AlbumCard from '../components/AlbumCard'
 import AddAlbumContainer from './AddAlbumContainer'
+import Profile from '../components/Profile'
 
 class VaultContainer extends Component {
   getAlbums() {
@@ -33,6 +34,11 @@ class VaultContainer extends Component {
 
     return (
     <div>
+  `   <div>
+        <Row>
+          <Profile albums={albums} />
+        </Row>
+      </div>`
       <div className="listWrapper">
          <ul className="albumList">
          <Row>
@@ -40,6 +46,7 @@ class VaultContainer extends Component {
         </Row>
         </ul>
       </div>
+
       <div>
         <Row>
           <AddAlbumContainer />
