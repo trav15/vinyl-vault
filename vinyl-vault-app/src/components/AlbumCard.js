@@ -9,14 +9,13 @@ class AlbumCard extends Component {
     const album = this.props.currentalbum;
     const genericCoverURL = "http://canaanmedia.com/wp-content/uploads/2014/09/12.jpg"
     album.cover_url = album.cover_url === "" ?  genericCoverURL : album.cover_url
-    const albumURL = `/albums/${album.id}`
 
     return (
       <li className="album">
         <Col s={12} m={3}>
           <Card header={<CardTitle reveal image={album.cover_url} waves='light'/>}
               title = {album.title}
-              reveal={ <AlbumCardReveal album={album} albumURL = {albumURL} /> }>
+              reveal={ <AlbumCardReveal album={album} deleteAlbum={album => this.props.deleteAlbum(album)} /> }> 
               <p>{album.artist}</p>
           </Card>
         </Col>
