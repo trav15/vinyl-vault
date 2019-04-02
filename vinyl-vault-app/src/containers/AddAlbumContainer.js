@@ -5,6 +5,7 @@ import { addAlbum } from '../actions/actionCreators'
 import AlbumForm from '../components/AlbumForm'
 
 class addAlbumContainer extends Component {
+
   addAlbum = (fields) => {
     axios.post('/api/vault/albums', {album: fields})
     .then(response => {
