@@ -23,14 +23,12 @@ class editAlbumContainer extends Component {
   }
 
   render() {
-    console.log(this.props.albums)
     return (
       <div className="album-form">
-        <h2>HELLO</h2>
+        <h3>Edit Album</h3>
+        <img src={this.props.albums.cover_url} width="25%"/>
         <form>
-        <div className="panel panel-default">
-        </div>
-        <Row className="add-album-form">
+        <Row className="edit-album-form">
           <Input
             s={6}
             name="title"
