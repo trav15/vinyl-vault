@@ -6,26 +6,12 @@ import AlbumForm from '../components/AlbumForm'
 
 class editAlbumContainer extends Component {
 
-  addAlbum = (fields) => {
-    axios.post('/api/vault/albums', {album: fields})
-    .then(response => {
-      this.props.dispatch(addAlbum(response.data))
-    if (response.status === 200 && response.statusText === 'OK'){
-        window.Materialize.toast('Successfully Added Album To Collection', 3000)
-    }
-    })
-    .catch(error => console.log(error))
-  }
-
-  onSubmit = (fields) => {
-    this.addAlbum(fields)
-  }
-
   render() {
 
     return (
       <div className="album-form">
-        <AlbumForm onSubmit={fields => this.onSubmit(fields)}/>
+        <h2>HELLO</h2>
+        <AlbumForm />
       </div>
     )
     }
