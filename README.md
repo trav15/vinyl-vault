@@ -1,5 +1,5 @@
 # Vinyl Vault
-![Vinyl Vault walkthrough gif](https://github.com/trav15/trav15.github.io/blob/master/img/vinyl-vault.gif?raw=true)
+![Vinyl Vault walkthrough gif](https://github.com/trav15/trav15.github.io/blob/master/img/vinyl-vault.gif?raw=true =500x)
 
 A CMS to track a user's vinyl record collection. Users can add a vinyl record with Artist, Album, a link to album cover, and any notes about that record.  Utilizes React/Redux as front-end framework and Rails API as a back-end server.
 
